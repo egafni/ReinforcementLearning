@@ -1,6 +1,6 @@
 # Reinforcement Learning
 
-Various implementations of famous Reinforcement Learning algorithms (DQN, SAC, REINFORCE, PPO etc)
+Various implementations of famous Reinforcement Learning algorithms (DQN, SAC, REINFORCE, PPO, etc)
 
 # Install
 
