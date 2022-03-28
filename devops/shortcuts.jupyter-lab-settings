@@ -1,0 +1,11 @@
+{"shortcuts":
+    [
+     {
+            "command": "notebook:run-all-above",
+            "keys": [
+                "Shift Backspace"
+            ],
+            "selector": "[data-jp-code-runner]"
+        },
+    ]
+}
