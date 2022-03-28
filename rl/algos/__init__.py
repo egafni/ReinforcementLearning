@@ -6,4 +6,4 @@ from gym.envs.registration import register
 
 logger = logging.getLogger(__name__)
 
-register(id="ContinuousCartPole-v0", entry_point="oracle.rl.envs.continuous_cartpole:ContinuousCartPole")
+register(id="ContinuousCartPole-v0", entry_point="algos.algos.envs.continuous_cartpole:ContinuousCartPole")

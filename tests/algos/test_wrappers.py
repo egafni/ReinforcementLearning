@@ -1,6 +1,6 @@
 import gym
 
-from oracle.rl.wrappers import BufferWrapper2
+from rl.algos.wrappers import BufferWrapper2
 
 
 def test_buffer_wrapper2():

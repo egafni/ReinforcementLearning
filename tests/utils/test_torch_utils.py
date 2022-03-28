@@ -2,7 +2,7 @@ from collections import OrderedDict
 
 from torch import nn
 
-from oracle.utils.torch_utils import summarize
+from rl.utils.torch_utils import summarize
 
 
 def test_summarize():

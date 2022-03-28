@@ -1,6 +1,6 @@
 """
 Cartpole:
-python oracle/rl/dqn/sample.py --env_name CartPole-v1 --model_name DQN_Mlp --eps_decay_last_frame 10000 --replay_start_size 1000
+python algos/algos/dqn/sample.py --env_name CartPole-v1 --model_name DQN_Mlp --eps_decay_last_frame 10000 --replay_start_size 1000
 By episode 390 we achieve a mean reward of 260
 
 Can solve CartPole and Pong, and get up to 8 points on BreakOut
@@ -20,10 +20,10 @@ from simple_parsing import ArgumentParser
 from torch import nn
 from torch.utils.tensorboard import SummaryWriter
 
-from oracle.common import make_env_oracle
-from oracle.rl.dqn.models import DQN_Conv2d, DQN_Mlp, DQN_resnet18
-from oracle.rl.rl_utils import RewardTracker  # type:ignore
-from oracle.utils.misc_utils import DataClassMixin
+from rl.common import make_env
+from rl.algos.dqn.models import DQN_Conv2d, DQN_Mlp, DQN_resnet18
+from rl.algos.rl_utils import RewardTracker  # type:ignore
+from rl.utils.misc_utils import DataClassMixin
 
 
 @dataclass
@@ -143,7 +143,7 @@ class Agent:
 
 def train(params: DQNParams):
     seed_everything(params.seed)
-    env = make_env_oracle(params.env_name, params.env_kwargs)
+    env = make_env(params.env_name, params.env_kwargs)
 
     device = torch.device("cpu" if params.cpu else "cuda")
 

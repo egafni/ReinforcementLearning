@@ -1,5 +1,5 @@
 
-def make_env_oracle(env_name: str, env_kwargs: dict):
+def make_env(env_name: str, env_kwargs: dict):
     """
     The single interface we use for creating environments to be used by our custom training scripts
     """

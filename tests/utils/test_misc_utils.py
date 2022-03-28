@@ -2,7 +2,7 @@ import argparse
 from dataclasses import dataclass, field
 from typing import Optional
 
-from oracle.utils.misc_utils import DataClassMixin
+from rl.utils.misc_utils import DataClassMixin
 
 
 def test_dataclass_mixin():

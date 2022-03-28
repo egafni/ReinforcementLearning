@@ -12,9 +12,9 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 
-from oracle.common import make_env_oracle
-from oracle.rl.ppo.lib import calc_logprob, model, test_net
-from oracle.utils.misc_utils import DataClassMixin
+from rl.common import make_env
+from rl.algos.ppo.lib import calc_logprob, model, test_net
+from rl.utils.misc_utils import DataClassMixin
 
 
 @dataclass
@@ -93,8 +93,8 @@ def train(params: PPOParams):
     save_path = os.path.join("saves", "ppo-" + params.name)
     os.makedirs(save_path, exist_ok=True)
 
-    env = make_env_oracle(params.env_name, params.env_kwargs)
-    test_env = make_env_oracle(params.env_name, params.env_kwargs)
+    env = make_env(params.env_name, params.env_kwargs)
+    test_env = make_env(params.env_name, params.env_kwargs)
 
     net_actor = model.ModelActor(env.observation_space.shape[0], env.action_space.shape[0]).to(device)
     net_critic = model.ModelCritic(env.observation_space.shape[0]).to(device)

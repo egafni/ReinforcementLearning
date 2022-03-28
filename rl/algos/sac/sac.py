@@ -4,8 +4,8 @@ import torch
 import torch.nn.functional as F
 from torch.optim import Adam
 
-from oracle.rl.sac.model import DeterministicPolicy, GaussianPolicy, QNetwork
-from oracle.rl.sac.sac_utils import hard_update, soft_update
+from rl.algos.sac.model import DeterministicPolicy, GaussianPolicy, QNetwork
+from rl.algos.sac.sac_utils import hard_update, soft_update
 
 
 class SAC(object):

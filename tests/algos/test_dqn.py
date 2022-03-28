@@ -1,7 +1,7 @@
 from pytorch_lightning import seed_everything
 
-from oracle.rl.dqn import train
-from oracle.rl.dqn.train import DQNParams
+from rl.algos.dqn import train
+from rl.algos.dqn.train import DQNParams
 
 
 def test_dqn():

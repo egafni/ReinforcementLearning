@@ -3,7 +3,7 @@ import numpy as np
 import torch
 from torch import nn
 
-from oracle.utils.torch_utils import net_to_device
+from rl.utils.torch_utils import net_to_device
 
 
 class PolicyNet(nn.Module):

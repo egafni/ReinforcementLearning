@@ -99,13 +99,13 @@ exclude = '''
 [tool.isort]
 profile = "black"
 line_length = 120
-src_paths = ["oracle", "scripts"]
+src_paths = ["rl", "scripts"]
 skip = "submodules"
 
 [tool.pytest.ini_options]
 addopts = "--doctest-modules --doctest-glob=\"*.py\" -vv --durations 5 --pdbcls=IPython.terminal.debugger:Pdb --strict-markers"
 testpaths = [
-    "oracle/tests",
+    "tests",
     "notebooks/tutorials"
 ]
 filterwarnings = [

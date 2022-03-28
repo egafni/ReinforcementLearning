@@ -1,4 +1,4 @@
-from oracle.rl.reinforce.train import ReinforceParams, train
+from rl.algos.reinforce.train import ReinforceParams, train
 
 
 def test_reinforce():

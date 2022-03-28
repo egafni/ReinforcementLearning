@@ -66,7 +66,7 @@ RUN --mount=type=cache,target=/static/.cache/poetry \
     else false ; fi
 
 # install project - run this the last for project code caching
-COPY oracle/ ./oracle/
+COPY rl/ ./rl/
 RUN --mount=type=cache,target=/static/.cache/poetry \
     if [ "$STAGE" = "production" ] ; then poetry install --no-dev --no-root; \
     elif [ "$STAGE" = "development" ] ; then poetry install --no-root; \

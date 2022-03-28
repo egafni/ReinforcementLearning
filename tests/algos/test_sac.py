@@ -7,8 +7,8 @@
 # import torch
 # from torch.utils.tensorboard import SummaryWriter
 #
-# from oracle.rl.sac.replay_memory import ReplayMemory
-# from oracle.rl.sac.sac import SAC
+# from algos.algos.sac.replay_memory import ReplayMemory
+# from algos.algos.sac.sac import SAC
 #
 # parser = argparse.ArgumentParser(description="PyTorch Soft Actor-Critic Args")
 # # parser.add_argument('--env-name', default="HalfCheetah-v2",

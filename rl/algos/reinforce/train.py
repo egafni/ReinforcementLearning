@@ -16,10 +16,10 @@ import torch
 import torch.optim as optim
 from pytorch_lightning import seed_everything
 
-from oracle.common import make_env_oracle
-from oracle.rl.reinforce.models import PolicyConv, PolicyMlp, PolicyNet
-from oracle.rl.rl_utils import RewardTracker, get_returns  # type: ignore
-from oracle.utils.misc_utils import DataClassMixin
+from rl.common import make_env
+from rl.algos.reinforce.models import PolicyConv, PolicyMlp, PolicyNet
+from rl.algos.rl_utils import RewardTracker, get_returns  # type: ignore
+from rl.utils.misc_utils import DataClassMixin
 
 
 @dataclass
@@ -109,7 +109,7 @@ class Episode:
 
 def train(params: ReinforceParams):
     seed_everything(params.seed)
-    env = make_env_oracle(params.env_name, params.env_kwargs)
+    env = make_env(params.env_name, params.env_kwargs)
     env.seed(params.seed)
     device = torch.device("cpu" if params.cpu else "cuda")
     net = params.model_class(env.observation_space.shape, env.action_space.n).to(device)

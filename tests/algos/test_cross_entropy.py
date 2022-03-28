@@ -1,6 +1,6 @@
 import numpy
 
-from oracle.rl import cross_entropy
+from rl.algos import cross_entropy
 
 
 def test_cross_entropy():
