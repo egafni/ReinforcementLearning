@@ -72,6 +72,7 @@ pycoingecko = "^2.2.0"
 coinmarketcap = "^5.0.3"
 jupyter-dash = "^0.4.0"
 ipywidgets = "^7.6.5"
+ptan = {git = "https://github.com/egafni/ptan"}
 
 [tool.poetry.dev-dependencies]
 jupyter = "^1.0.0"

@@ -5,8 +5,6 @@ Various implementations of famous Reinforcement Learning algorithms (DQN, SAC, R
 # Install
 
 poetry install
-pip install git+https://github.com/egafni/ptan
-
 
 # Run tests
 
