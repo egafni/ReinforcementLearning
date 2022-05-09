@@ -1,3 +1,4 @@
+import gym
 
 def make_env(env_name: str, env_kwargs: dict):
     """

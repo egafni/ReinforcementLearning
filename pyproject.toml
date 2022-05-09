@@ -6,6 +6,8 @@ authors = ["Erik Gafni <egafni@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+robin-stocks = "^1.7.1"
+millify = "^0.1.1"
 plotly = ">=5"
 pandas = "^1.2.2"
 numpy = "^1.18.0"
@@ -13,11 +15,19 @@ scipy = "^1.6.0"
 requests = "^2.25.1"
 matplotlib = "^3.3.4"
 seaborn = "^0.11.1"
+xarray = "^0.16.2"
 statsmodels = "^0.12.2"
 line-profiler = "^3.2.0"
 joblib = "^1.0.1"
 tabulate = "^0.8.7"
+yfinance = "^0.1.64"
+benzinga = "^1.21"
+nltk = "^3.5"
+beautifulsoup4 = "^4.9.3"
+praw = "^7.1.4"
 scikit-learn = "^0.24.1"
+backtrader = "^1.9.76"
+cryptocompare = "^0.7.4"
 tqdm = "^4.56.2"
 torch = "^1.8"
 gym-super-mario-bros = "^7.3.2"
@@ -25,17 +35,24 @@ gym = {extras = ["atari"], version = "^0.18.0"}
 tensorboard = "^2.4.1"
 opencv-python = "^4.5.1"
 simple-parsing = "^0.0.14"
+pytorch-lightning = "^1.2.8"
+pytorch-ignite = "^0.4.4"
 torchvision = "0.9.1"
+torchaudio = "0.8.1"
 PyVirtualDisplay = "^2.1"
 stable-baselines3 = "^1.0"
 dateparser = "^1.0.0"
 h5py = "^3"
 smart-open = "^5.0.0"
 lightning-bolts = "^0.3.3"
+python-binance = "^1.0.4"
+freqtrade = "^2021.4"
 fastapi = "^0.64.0"
 uvicorn = "^0.13.4"
+hydra-core = "1.1.0.dev6"
 dash = "^1.20.0"
 
+stockstats = "^0.3.2"
 ray = {extras = ["rllib", "default"], version = "^1.3.0"}
 GPUtil = "^1.4.0"
 pybullet = "^3.1.7"
@@ -99,13 +116,13 @@ exclude = '''
 [tool.isort]
 profile = "black"
 line_length = 120
-src_paths = ["rl", "scripts"]
+src_paths = ["oracle", "scripts"]
 skip = "submodules"
 
 [tool.pytest.ini_options]
 addopts = "--doctest-modules --doctest-glob=\"*.py\" -vv --durations 5 --pdbcls=IPython.terminal.debugger:Pdb --strict-markers"
 testpaths = [
-    "tests",
+    "oracle/tests",
     "notebooks/tutorials"
 ]
 filterwarnings = [
@@ -114,6 +131,10 @@ filterwarnings = [
 [tool.poe.tasks]
 force-cuda11 = "python -m pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html"
 fix-own="chown -R $UID:$GID"  # specify directory
+trade = " freqtrade trade --userdir freqtrade_userdata/user_data -c freqtrade_userdata/user_data/config.json -c freqtrade_userdata/user_data/config.secret.json"
+backtesting = " freqtrade backtesting --userdir freqtrade_userdata/user_data -c freqtrade_userdata/user_data/config.json -c freqtrade_userdata/user_data/config.secret.json"
+docker-trade = "docker-compose run --rm ordev freqtrade trade --userdir freqtrade_userdata/user_data -c freqtrade_userdata/user_data/config.json -c freqtrade_userdata/user_data/config.secret.json"
+docker-backtesting = "docker-compose run --rm ordev freqtrade backtesting --userdir freqtrade_userdata/user_data -c freqtrade_userdata/user_data/config.json -c freqtrade_userdata/user_data/config.secret.json"
 
 [tool.mypy]
 plugins="numpy.typing.mypy_plugin"

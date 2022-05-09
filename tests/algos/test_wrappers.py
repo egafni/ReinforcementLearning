@@ -4,7 +4,8 @@ from rl.algos.wrappers import BufferWrapper2
 
 
 def test_buffer_wrapper2():
-    env = gym.make("Sin-v0", do_offset=True, n_cycles=4, n_steps=50)
+    env = gym.make("CartPole-v0")
+    env.reset()
     env.seed(40294064)
     assert env.observation_space.shape == (4,)
 

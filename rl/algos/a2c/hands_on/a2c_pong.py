@@ -12,7 +12,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.nn.utils as nn_utils
 import torch.optim as optim
-from lib import common
+from rl import common
 from torch.utils.tensorboard import SummaryWriter
 
 GAMMA = 0.99

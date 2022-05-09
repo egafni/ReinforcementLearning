@@ -1,5 +1,5 @@
 import pytest
-import ray
+# import ray
 
 
 def pytest_addoption(parser):
