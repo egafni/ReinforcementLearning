@@ -1,6 +1,6 @@
 # Reinforcement Learning
 
-My personal re-implementation of of famous Reinforcement Learning algorithms (DQN, SAC, REINFORCE, PPO, etc)
+My personal re-implementation of famous Reinforcement Learning algorithms (DQN, SAC, REINFORCE, PPO, etc)
 
 # Install
 
